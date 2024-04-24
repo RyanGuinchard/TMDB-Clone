@@ -21,9 +21,11 @@ function SearchResults() {
   return (
     <>
       <Navbar />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 p-4">
         {results.map((result) => (
-          <Card key={result.id} data={result} mediaType={result.media_type} />
+          <div className="aspect-w-16 aspect-h-9 overflow-hidden" key={result.id}>
+            <Card data={result} mediaType={result.media_type} />
+          </div>
         ))}
       </div>
     </>

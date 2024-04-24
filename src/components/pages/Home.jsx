@@ -13,7 +13,7 @@ const Home = () => {
           import.meta.env.VITE_API_KEY
         }`
       );
-      setMovies(response.data.results);
+      setMovies(response.data.results.slice(0, 6));
     };
 
     fetchMovies();
